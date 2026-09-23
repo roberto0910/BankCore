@@ -1,0 +1,19 @@
+# Archivos de compilación de .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos de configuración local y datos sensibles
+.env
+appsettings.Development.json
+
+# Dependencias de Node (Frontend)
+node_modules/
+dist/
+
+# Archivos de entorno de desarrollo e IDEs
+.vscode/
+.idea/
+*.log
