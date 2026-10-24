@@ -3,6 +3,7 @@ namespace BankCore.Domain.Entities;
 public class AuditLog
 {
     public Guid LogId { get; set; } = Guid.NewGuid();
+    public Guid AuditLogId { get; set; } = Guid.NewGuid();
     public Guid? UserId { get; set; }
     public string Action { get; set; } = string.Empty;
     public string? Details { get; set; } 
