@@ -1,6 +1,6 @@
 namespace BankCore.Domain.Common;
 
-public interface IUnit0fWork : IDisposable
+public interface IUnitOfWork : IDisposable
 {
     Task<int> CompleteAsync();
 }

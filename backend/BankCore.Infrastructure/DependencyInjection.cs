@@ -1,4 +1,6 @@
+using BankCore.Domain.Common;
 using BankCore.Infrastructure.Persistence;
+using BankCore.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +16,10 @@ public static class DependencyInjection
         options.UseNpgsql(
             configuration.GetConnectionString("DefaultConnection"),
             b => b.MigrationsAssembly(typeof(BankCoreDbContext).Assembly.FullName)));
+
+        // --- REGISTRO DE REPOSITORIOS Y UNIT OF WORK ---  
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         return services;
     }
